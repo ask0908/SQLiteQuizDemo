@@ -77,8 +77,9 @@ public class DBHelper extends SQLiteAssetHelper {
                                                  cursor.getString(cursor.getColumnIndex("AnswerC")),
                                                  cursor.getString(cursor.getColumnIndex("AnswerD")),
                                                  cursor.getString(cursor.getColumnIndex("CorrectAnswer")),
-                                                 cursor.getInt(cursor.getColumnIndex("IsImageQuestion")),
-                                                 cursor.getInt(cursor.getColumnIndex("CategoryID")));
+                                                 cursor.getInt(cursor.getColumnIndex("IsImageQuestion")) == 0 ? Boolean.FALSE : Boolean.TRUE,
+                                                 cursor.getInt(cursor.getColumnIndex("CategoryID")))
+                        ;
                 questions.add(question);
                 cursor.moveToNext();
             }
